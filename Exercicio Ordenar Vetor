@@ -1,0 +1,42 @@
+package javaapplication1;
+
+import java.util.Scanner;
+
+public class JavaApplication1 {
+
+    public static void main(String[] args) {
+
+        //ordenar vetor
+        int v[] = new int[4];
+        int aux = 0;
+        int j = 1;
+        int i = 0;
+
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Digite os valores do vetor: ");
+
+        for (i = 0; i < 4; i++) {
+
+            v[i] = teclado.nextInt();
+
+        }
+        while (j < 4) {
+            aux = v[j];
+            i = j - 1;
+
+            while ((i >= 0) && v[i] > aux) {
+
+                v[i + 1] = v[i];
+                i = i - 1;
+            }
+            v[i + 1] = aux;
+            j = j + 1;
+        }System.out.print("Vetor Ordenado: ");
+        for ( i = 0; i < 4; i++) {
+            System.out.print(v[i] + " ");
+        }
+
+    }
+
+}
